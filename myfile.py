@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2
+import cv2 as test
 import numpy as np
 import tensorflow as tf
 import time
@@ -22,7 +22,7 @@ def load_labels(labels_path):
 
 # Function to preprocess frame data and resize it
 def preprocess_frame(frame, target_size=(224, 224)):
-    resized_frame = cv2.resize(frame, target_size)
+    resized_frame = test.resize(frame, target_size)
     processed_frame = resized_frame.astype(np.float32) / 255.0
     return processed_frame
 
@@ -52,7 +52,7 @@ start_stop_button = st.button("Open Camera")
 
 # Open camera video feed when the button is clicked
 if start_stop_button:
-    cap = cv2.VideoCapture(0)
+    cap = test.VideoCapture(0)
 
     # Check if camera opened successfully
     if not cap.isOpened():
@@ -77,10 +77,10 @@ if start_stop_button:
 
             # Draw the detected label and confidence score on the frame
             text = f"{detected_label}   {confidence:.2f}"
-            frame = cv2.putText(frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            frame = test.putText(frame, text, (10, 30), test.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             # Convert frame from BGR to RGB
-            frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame_rgb = test.cvtColor(frame, test.COLOR_BGR2RGB)
 
             # Update HTML video element
             video_placeholder.image(frame_rgb, channels="RGB", use_column_width=True)
