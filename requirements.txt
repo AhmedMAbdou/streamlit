@@ -1,9 +1,1 @@
 streamlit==1.33.0
-je-open-cv-dev==0.0.4
-open-cv-plus==1.5
-opencv_cam==0.0.1
-opencv-camera==2023.1.7
-opencv-contrib-python==4.9.0.80
-opencv-python==4.9.0.80
-numpy==1.26.4
-tensorflow==2.16.1
