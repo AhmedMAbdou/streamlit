@@ -1,5 +1,5 @@
 import streamlit as st
-import opencv_camera as test
+import cv2 as test
 import numpy as np
 import tensorflow as tf
 import time
